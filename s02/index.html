@@ -1,0 +1,27 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h2> Multiplicador por 2 </h2>
+        <form onsubmit="multiplicar(); return false;">
+            <label for="number">Ingresa un numero</label>
+            <input type="number" id="numero" required>
+            <button type="submit">Multiplicar</button>
+        </form>
+
+        <p id="resultado"></p>
+        
+        <script>
+        function multiplicar(){
+            let numero = document.getElementById("numero").value;
+            let resultado = numero * 2;
+            document.getElementById("resultado").textContent = "Resultado es: " + resultado;
+        }
+        </script>
+        
+    </body>
+</html>

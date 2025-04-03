@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+</head>
+
+<body>
+    <h2> Calculadora Básica </h2>
+    <form onsubmit="return false;">
+        <label for="numero01">Ingresa el primer número: </label>
+        <input type="number" id="numero01" required>
+        <br>
+        <label for="numero02">Ingresa el segundo número: </label>
+        <input type="number" id="numero02" required>
+        <br>
+        <button type="button" onclick="calcular('suma')">Suma</button>
+        <button type="button" onclick="calcular('resta')">Resta</button>
+        <button type="button" onclick="calcular('multiplicacion')">Multiplicación</button>
+        <button type="button" onclick="calcular('potencia')">Potencia</button>
+    </form>
+
+    <p id="resultado"></p>
+    
+    <script>
+        function calcular(operacion) {
+            let num1 = parseFloat(document.getElementById("numero01").value);
+            let num2 = parseFloat(document.getElementById("numero02").value);
+            let resultado;
+            
+            switch (operacion) {
+                case "suma":
+                    resultado = num1 + num2;
+                    break;
+                case "resta":
+                    resultado = num1 - num2;
+                    break;
+                case "multiplicacion":
+                    resultado = num1 * num2;
+                    break;
+                case "potencia":
+                    resultado = Math.pow(num1, num2);
+                    break;
+                default:
+                    resultado = "Operación no válida";
+            }
+            
+            document.getElementById("resultado").textContent = "El resultado es: " + resultado;
+        }
+    </script>
+    
+</body>
+</html>
